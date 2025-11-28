@@ -1,6 +1,5 @@
 # How to use RiffTrack
 
---- 
 
 To play RiffTrack is very easy, the higher you lift your hands, 
 the higher your instruments will play.
@@ -8,8 +7,6 @@ the higher your instruments will play.
 Thus, the minimal requirement is a computer and a camera.
 
 I hope you have fun in your new way of karaokeing!
-
----
 
 ## License
 
