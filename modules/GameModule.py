@@ -6,13 +6,19 @@ import pygame
 # minPathing is the folder where the songs are stored
 # Separate the song between bass, drums, vocals and guitar
 def findSongPathing(minPathing: str):
-    songsDirectory = Path(minPathing)
-    pathing = []
+    songDirectory = Path(minPathing)
+    songDirectory = str(random.choice(list(songDirectory.iterdir())))
 
-    for folders in songsDirectory.iterdir():
-        pathing.append(folders)
+    return songDirectory
 
-    return str(random.choice(pathing))
+
+def getSongName(minPathing):
+    songDirectory = Path(minPathing)
+    songDirectory = random.choice(list(songDirectory.iterdir()))
+
+    songName = str(songDirectory.name)
+
+    return songName
 
 
 class GameModule:
