@@ -1,7 +1,7 @@
 import cv2
 import time
-import HandTrackingModule as ht
-from GameModule import GameModule, findSongPathing
+from modules import HandTrackingModule as ht
+from modules.GameModule import GameModule, findSongPathing
 
 audio = findSongPathing("./songs")
 game = GameModule(audio)

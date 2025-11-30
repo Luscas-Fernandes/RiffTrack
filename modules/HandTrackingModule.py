@@ -1,10 +1,8 @@
 import cv2
 import mediapipe as mp
-import time
-import numpy as np
 
 
-class HandDetector():
+class HandDetector:
     def __init__(
             self,
             mode=False,
@@ -72,7 +70,7 @@ class HandDetector():
         t = (val - in_lo) / (in_hi - in_lo)
         return out_lo + t * (out_hi - out_lo)
 
-    def changeVolume(self, img, handsLmLists, y_top_margin=50, y_bottom_margin=50, volumes=None):
+    def detectVolume(self, img, handsLmLists, y_top_margin=50, y_bottom_margin=50, volumes=None):
         if volumes is None:
             volumes = [0, 0, 0, 0]
 
@@ -110,36 +108,3 @@ class HandDetector():
             volumes[idx] = 0.0
 
         return [int(round(v)) for v in volumes]
-
-
-def main():
-    cap = cv2.VideoCapture(0)
-    detector = HandDetector()
-
-    volumes = [0, 0, 0, 0]
-
-    pTime = 0
-
-    while True:
-        pVolume = volumes.copy()
-        success, img = cap.read()
-        img = detector.findHands(img)
-        lmList = detector.findPosition(img)
-        volumes = detector.changeVolume(img, lmList, volumes=volumes)
-
-        if volumes != pVolume:
-            print(volumes)
-
-        cTime = time.time()
-        fps = 1 / (cTime - pTime)
-        pTime = cTime
-
-        cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_SIMPLEX, 2,
-                    (0, 0, 255), 3)
-
-        cv2.imshow("Image", img)
-        cv2.waitKey(10)
-
-
-if __name__ == "__main__":
-    main()
