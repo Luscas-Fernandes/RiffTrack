@@ -12,13 +12,10 @@ def findSongPathing(minPathing: str):
     return songDirectory
 
 
-def getSongName(minPathing):
-    songDirectory = Path(minPathing)
-    songDirectory = random.choice(list(songDirectory.iterdir()))
-
-    songName = str(songDirectory.name)
-
-    return songName
+def getSongName(songPathing):
+    songPathing = songPathing.replace("songs\\", '')
+    print(songPathing)
+    return songPathing
 
 
 class GameModule:

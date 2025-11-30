@@ -8,7 +8,7 @@ from modules.GameModule import GameModule, findSongPathing, getSongName
 def main():
     minPathing = "./songs"
     audio = findSongPathing(minPathing)
-    songName = getSongName(minPathing)
+    songName = getSongName(audio)
     game = GameModule(audio)
 
     cap = cv2.VideoCapture(0)
