@@ -33,3 +33,10 @@ while True:
 
     cv2.imshow("Image", img)
     cv2.waitKey(10)
+
+    if cv2.getWindowProperty("Image", cv2.WND_PROP_VISIBLE) < 1:
+        break
+
+game.quit()
+cap.release()
+cv2.destroyAllWindows()

@@ -43,3 +43,6 @@ class GameModule:
         for i, vol in enumerate(volumes):
             vol_norm = max(0.0, min(1.0, vol / 100.0))
             self.channels[i].set_volume(vol_norm)
+
+    def quit(self):
+        pygame.mixer.quit()
