@@ -45,10 +45,21 @@ class GameModule:
             self.channels[i].play(self.sounds[i], loops=-1)
             self.channels[i].set_volume(0.0)
 
+        self.started = False
+
     def changeVolume(self, volumes):
         for i, vol in enumerate(volumes):
             vol_norm = max(0.0, min(1.0, vol / 100.0))
             self.channels[i].set_volume(vol_norm)
+
+    def start(self):
+        if self.started:
+            return
+
+        self.started = True
+        for i in range(4):
+            self.channels[i].play(self.sounds[i], loops=-1)
+            self.channels[i].set_volume(0.0)
 
     def quit(self):
         pygame.mixer.quit()
