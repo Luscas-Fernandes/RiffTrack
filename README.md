@@ -1,12 +1,11 @@
-# How to use RiffTrack
+# How to play RiffTrack
 
 
-To play RiffTrack is very easy, the higher you lift your hands, 
-the higher your instruments will play.
+To play RiffTrack is very easy, you just got to run RiffTrack.py.
+The minimal requirement is a computer with a camera.
 
-Thus, the minimal requirement is a computer and a camera.
-
-I hope you have fun in your new way of karaokeing!
+The higher you lift your hands, the higher your instruments will play.
+Have fun in your new way of playing your songs!
 
 ## License
 
